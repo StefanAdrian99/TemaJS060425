@@ -292,10 +292,11 @@ for(let i = 0; i < products.length; i++){
 
 // EXERCITIUL 3
 
-let mostExpensiveElectronic = products[0];
+let mostExpensiveElectronic;
+
 
 for(let i = 0; i < products.length; i++){
-    if(products[i].category === "electronics" && products[i].price > mostExpensiveElectronic.price){
+    if(products[i].category === "electronics" && (mostExpensiveElectronic === undefined ||products[i].price > mostExpensiveElectronic.price)){
             mostExpensiveElectronic = products[i];
     }
 }
@@ -304,10 +305,10 @@ console.log(`The most expensive electronic is ${mostExpensiveElectronic.price}`)
 
 //EXERCITIUL 4
 
-let cheapestWomenClothing = products[0];
+let cheapestWomenClothing;
 
 for(let i = 0; i < products.length; i++){
-    if(products[i].category === "women's clothing" && products[i].price < cheapestWomenClothing.price){
+    if(products[i].category === "women's clothing" && (cheapestWomenClothing === undefined || products[i].price < cheapestWomenClothing.price)){
         cheapestWomenClothing = products[i];
     }
 }
@@ -316,10 +317,10 @@ console.log(`Cheapest womens clothing is ${cheapestWomenClothing.price}`);
 
 //EXERCITIUL 5
 
-let highestElectronicRating = products[0];
+let highestElectronicRating;
 
 for(let i = 0; i < products.length; i++){
-    if(products[i].category === "electronics" && products[i].rating.rate > highestElectronicRating.rating.rate){
+    if(products[i].category === "electronics" && (highestElectronicRating === undefined || products[i].rating.rate > highestElectronicRating.rating.rate)){
         highestElectronicRating = products[i];
     }
 }
@@ -329,10 +330,10 @@ console.log(`Highest electronic rating is ${highestElectronicRating.rating.rate}
 //EXERCITIUL 6
 
 
-let highestRating = products[0];
+let highestRating;
 
 for(let i = 0; i < products.length; i++){
-    if(products[i].rating.rate > highestRating.rating.rate){
+    if(highestRating === undefined || products[i].rating.rate > highestRating.rating.rate){
         highestRating = products[i];
     }
 
